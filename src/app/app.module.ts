@@ -6,11 +6,13 @@ import {AppComponent} from './components/root/app.component';
 import {HomeComponent} from './components/home/home.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {HttpClientModule} from "@angular/common/http";
+import { ImagePipe } from './pipes/image.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    ImagePipe
   ],
   imports: [
     BrowserModule,
