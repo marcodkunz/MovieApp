@@ -1,3 +1,17 @@
-<p>home works!</p>
-
-<p>{{nowPlaying}}</p>
+<div class="container">
+  <div class="content-section implementation">
+    <div class="card">
+<!--      TODO: customize buttons and indicators: https://www.primefaces.org/primeng/showcase/#/carousel-->
+      <p-carousel [value]="nowPlaying" [numVisible]="3" [numScroll]="1" [circular]="true" [autoplayInterval]="0">
+        <ng-template let-movie pTemplate="item">
+          <div class="item card">
+            <img src="{{movie.poster_path | image}}" class="card-img-top" alt="{{movie.title}} poster image">
+            <div class="card-body">
+              <h5 class="card-title">{{movie.title}}</h5>
+            </div>
+          </div>
+        </ng-template>
+      </p-carousel>
+    </div>
+  </div>
+</div>
