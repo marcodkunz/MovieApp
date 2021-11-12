@@ -9,7 +9,7 @@ import {MovieService} from "../../services/movie/movie.service";
 })
 export class HomeComponent implements OnInit {
 
-  nowPlaying: Array<MovieResponse> | undefined;
+  nowPlaying: Array<MovieResponse> = [];
 
   constructor(private movieService: MovieService) {
   }

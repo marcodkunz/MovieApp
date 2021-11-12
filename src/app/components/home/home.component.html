@@ -1,14 +1,17 @@
 <div class="container">
-  <div class="row">
-    <ngb-carousel class="carousel-multi-item" *ngIf="nowPlaying">
-      <ng-template ngbSlide class="col-2" *ngFor="let movie of nowPlaying">
-        <div class="picsum-img-wrapper">
-          <img [src]="movie.poster_path | image" alt="{{movie.title}} poster image">
-        </div>
-        <div class="carousel-caption">
-          <h3>{{movie.title}}</h3>
-        </div>
-      </ng-template>
-    </ngb-carousel>
+  <div class="content-section implementation">
+    <div class="card">
+<!--      TODO: customize buttons and indicators: https://www.primefaces.org/primeng/showcase/#/carousel-->
+      <p-carousel [value]="nowPlaying" [numVisible]="3" [numScroll]="1" [circular]="true" [autoplayInterval]="0">
+        <ng-template let-movie pTemplate="item">
+          <div class="item card">
+            <img src="{{movie.poster_path | image}}" class="card-img-top" alt="{{movie.title}} poster image">
+            <div class="card-body">
+              <h5 class="card-title">{{movie.title}}</h5>
+            </div>
+          </div>
+        </ng-template>
+      </p-carousel>
+    </div>
   </div>
 </div>
