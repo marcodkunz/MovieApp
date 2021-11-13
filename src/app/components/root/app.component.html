@@ -14,26 +14,36 @@
           <a class="nav-link" href="/mylist">Meine Liste</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="allMovies">Alle Filme</a>
+          <a class="nav-link" href="/allMovies">Alle Filme</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="/Genres" id="navbarDropdownMenuLink" data-toggle="dropdown"
-             aria-haspopup="true" aria-expanded="true">
+        <li class="nav-item dropdown" ngbDropdown>
+          <a class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
             Genres
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="/comedies">Komödien</a>
-            <a class="dropdown-item" href="/horror">Horror</a>
-            <a class="dropdown-item" href="/action">Action</a>
-          </div>
+          <ul class="dropdown-menu"  ngbDropdownMenu aria-labelledby="navbarScrollingDropdown">
+            <li ngbDropdownItem><a class="dropdown-item" href="/action">Action</a></li>
+            <li ngbDropdownItem><a class="dropdown-item" href="/adventure">Adventure</a></li>
+            <li ngbDropdownItem><a class="dropdown-item" href="/animation">Animation</a></li>
+            <li ngbDropdownItem><a class="dropdown-item" href="/crime">Crime</a></li>
+            <li ngbDropdownItem><a class="dropdown-item" href="/documentary">Documentary</a></li>
+            <li ngbDropdownItem><a class="dropdown-item" href="/drama">Drama</a></li>
+            <li ngbDropdownItem><a class="dropdown-item" href="/family">Family</a></li>
+            <li ngbDropdownItem><a class="dropdown-item" href="/fantasy">Fantasy</a></li>
+            <li ngbDropdownItem><a class="dropdown-item" href="/history">History</a></li>
+            <li ngbDropdownItem><a class="dropdown-item" href="/music">Music</a></li>
+            <li ngbDropdownItem><a class="dropdown-item" href="/mystery">Mystery</a></li>
+            <li ngbDropdownItem><a class="dropdown-item" href="/romance">Romance</a></li>
+            <li ngbDropdownItem><a class="dropdown-item" href="/thriller">Thriller</a></li>
+            <li ngbDropdownItem><a class="dropdown-item" href="/war">War</a></li>
+            <li ngbDropdownItem><a class="dropdown-item" href="/western">Western</a></li>
+          </ul>
         </li>
       </ul>
       <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <input name="query" class="form-control mr-sm-2" type="search" placeholder="Search" [(ngModel)]="query" aria-label="Search">
+        <button (click)="search()" class="btn btn-outline-success my-2 my-sm-0 float-right"  type="submit">Suchen</button>
       </form>
     </div>
   </div>
 </nav>
-
 <router-outlet></router-outlet>

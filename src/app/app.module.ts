@@ -8,19 +8,23 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {HttpClientModule} from "@angular/common/http";
 import { ImagePipe } from './pipes/image.pipe';
 import {CarouselModule} from "primeng/carousel";
+import { MoviesComponent } from './components/movies/movies.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ImagePipe
+    ImagePipe,
+    MoviesComponent
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         NgbModule,
         HttpClientModule,
-        CarouselModule
+        CarouselModule,
+        FormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]
