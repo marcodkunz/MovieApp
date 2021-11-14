@@ -66,6 +66,11 @@ body {
   font-size: 1.2rem;
 }
 
+a:hover {
+  color: #212529;
+  text-decoration: none;
+}
+
 
 
 

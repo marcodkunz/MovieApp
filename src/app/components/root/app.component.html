@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
   <div class="container-fluid">
     <a class="navbar-brand" href="/home">MovieApp</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
@@ -22,21 +22,7 @@
             Genres
           </a>
           <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="navbarScrollingDropdown">
-            <li ngbDropdownItem><a class="dropdown-item" href="/action">Action</a></li>
-            <li ngbDropdownItem><a class="dropdown-item" href="/adventure">Adventure</a></li>
-            <li ngbDropdownItem><a class="dropdown-item" href="/animation">Animation</a></li>
-            <li ngbDropdownItem><a class="dropdown-item" href="/crime">Crime</a></li>
-            <li ngbDropdownItem><a class="dropdown-item" href="/documentary">Documentary</a></li>
-            <li ngbDropdownItem><a class="dropdown-item" href="/drama">Drama</a></li>
-            <li ngbDropdownItem><a class="dropdown-item" href="/family">Family</a></li>
-            <li ngbDropdownItem><a class="dropdown-item" href="/fantasy">Fantasy</a></li>
-            <li ngbDropdownItem><a class="dropdown-item" href="/history">History</a></li>
-            <li ngbDropdownItem><a class="dropdown-item" href="/music">Music</a></li>
-            <li ngbDropdownItem><a class="dropdown-item" href="/mystery">Mystery</a></li>
-            <li ngbDropdownItem><a class="dropdown-item" href="/romance">Romance</a></li>
-            <li ngbDropdownItem><a class="dropdown-item" href="/thriller">Thriller</a></li>
-            <li ngbDropdownItem><a class="dropdown-item" href="/war">War</a></li>
-            <li ngbDropdownItem><a class="dropdown-item" href="/western">Western</a></li>
+            <a href="/genre"><li ngbDropdownItem class="dropdown-item" *ngFor="let genre of genres">{{genre.name}}</li></a>
           </ul>
         </li>
       </ul>

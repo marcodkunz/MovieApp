@@ -1,7 +1,8 @@
 import {Component, Input, Output} from '@angular/core';
 import {MovieService} from "../../services/movie/movie.service";
 import {MovieListResponse, MovieResponse} from "../../models/Movie";
-import { Router } from '@angular/router';
+import {Router} from '@angular/router';
+import {Genre, GenreResponse} from "../../models/Genre";
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
 export class AppComponent {
 
   searchResult: Array<MovieResponse> = [];
+  genres: Array<Genre> = [];
 
   title = 'MovieApp';
   query = '';
@@ -21,9 +23,17 @@ export class AppComponent {
   search(): void {
     const queryString = this.query;
     this.movieService.getSearch(queryString).subscribe((data: MovieListResponse) => {
-      this.searchResult = data.results}
+        this.searchResult = data.results
+      }
     )
-
   }
+
+  ngOnInit(): void {
+    this.movieService.getGenre().subscribe((data: GenreResponse) => {
+        this.genres = data.genres
+      }
+    )
+  }
+
 }
 
