@@ -11,16 +11,17 @@
           <a class="nav-link active" aria-current="page" href="/home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/mylist">Meine Liste</a>
+          <a class="nav-link" href="/favorites">Favoriten</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/allMovies">Alle Filme</a>
         </li>
         <li class="nav-item dropdown" ngbDropdown>
-          <a class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" ngbDropdownToggle>
+          <a class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown"
+             aria-expanded="false" ngbDropdownToggle>
             Genres
           </a>
-          <ul class="dropdown-menu"  ngbDropdownMenu aria-labelledby="navbarScrollingDropdown">
+          <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="navbarScrollingDropdown">
             <li ngbDropdownItem><a class="dropdown-item" href="/action">Action</a></li>
             <li ngbDropdownItem><a class="dropdown-item" href="/adventure">Adventure</a></li>
             <li ngbDropdownItem><a class="dropdown-item" href="/animation">Animation</a></li>
@@ -40,10 +41,13 @@
         </li>
       </ul>
       <form class="form-inline">
-        <input name="query" class="form-control mr-sm-2" type="search" placeholder="Search" [(ngModel)]="query" aria-label="Search">
-        <button (click)="search()" class="btn btn-outline-success my-2 my-sm-0 float-right"  type="submit">Suchen</button>
+        <input name="query" class="form-control mr-sm-2" type="search" placeholder="Fluch der Karibik" [(ngModel)]="query"
+               aria-label="Search">
+        <button (click)="search()" class="btn btn-outline-success my-2 my-sm-0 float-right" type="submit">Suchen
+        </button>
       </form>
     </div>
   </div>
 </nav>
 <router-outlet></router-outlet>
+

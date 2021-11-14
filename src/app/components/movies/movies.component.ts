@@ -9,14 +9,14 @@ import {MovieService} from "../../services/movie/movie.service";
 })
 export class MoviesComponent implements OnInit {
 
-  allMovies: Array<MovieResponse> = [];
+  latestMovies: Array<MovieResponse> = [];
 
   constructor(private movieService: MovieService) {
   }
 
   ngOnInit(): void {
-    this.movieService.getMovie().subscribe((data: MovieListResponse) => {
-        this.allMovies = data.results
+    this.movieService.getPopularMovies().subscribe((data: MovieListResponse) => {
+        this.latestMovies = data.results
       }
     )
   }

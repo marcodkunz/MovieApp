@@ -1,6 +1,7 @@
 import {Component, Input, Output} from '@angular/core';
 import {MovieService} from "../../services/movie/movie.service";
 import {MovieListResponse, MovieResponse} from "../../models/Movie";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +9,6 @@ import {MovieListResponse, MovieResponse} from "../../models/Movie";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
-  @Input() queryString: string = '';
 
   searchResult: Array<MovieResponse> = [];
 
@@ -20,9 +19,11 @@ export class AppComponent {
   }
 
   search(): void {
-    this.movieService.getMovie().subscribe((data: MovieListResponse) => {
+    const queryString = this.query;
+    this.movieService.getSearch(queryString).subscribe((data: MovieListResponse) => {
       this.searchResult = data.results}
     )
+
   }
 }
 

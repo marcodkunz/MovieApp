@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {MovieListResponse} from "../../models/Movie";
 import {query} from "@angular/animations";
+import {apiKey, baseUrl, langDE} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +11,10 @@ import {query} from "@angular/animations";
 export class MovieService {
 
   // TODO: refactor
-  private nowPlayingUrl: string = "https://api.themoviedb.org/3/movie/now_playing?api_key=7a31fe58dd891f6ad484f3ae8589aa71";
-  private searchMovieBaseUrl: string = "https://api.themoviedb.org/3/search/movie?api_key=7a31fe58dd891f6ad484f3ae8589aa71&language=en-US&query=horror";
+  private nowPlayingUrl: string = baseUrl + "movie/now_playing?" + apiKey;
+  private searchMovieBaseUrl: string = baseUrl + "search/movie?" + apiKey + langDE + "&query=";
+  private popularMoviesUrl: string = baseUrl + "movie/popular?" + apiKey + langDE;
+  private queryString: string = "";
 
     constructor(private http: HttpClient) {
   }
@@ -20,8 +23,11 @@ export class MovieService {
     return this.http.get<MovieListResponse>(this.nowPlayingUrl);
   }
 
-  getMovie(): Observable<MovieListResponse> {
-    return this.http.get<MovieListResponse>(this.searchMovieBaseUrl);
+  getPopularMovies(): Observable<MovieListResponse> {
+    return this.http.get<MovieListResponse>(this.popularMoviesUrl);
   }
 
+  getSearch(queryString: string): Observable<MovieListResponse> {
+    return this.http.get<MovieListResponse>(this.searchMovieBaseUrl+queryString);
+  }
 }

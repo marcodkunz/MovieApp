@@ -6,6 +6,7 @@ import {MoviesComponent} from "./components/movies/movies.component";
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'allMovies', component: MoviesComponent},
+  {path: 'latestMovies', component: MoviesComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: '**', component: HomeComponent},
 ];
