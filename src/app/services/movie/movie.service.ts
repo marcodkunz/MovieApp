@@ -15,8 +15,8 @@ export class MovieService {
   private nowPlayingUrl: string = baseUrl + "movie/now_playing?" + apiKey;
   private searchMovieBaseUrl: string = baseUrl + "search/movie?" + apiKey + langDE + "&query=";
   private popularMoviesUrl: string = baseUrl + "movie/popular?" + apiKey + langDE;
-  private GenreUrl: string = baseUrl + "genre/movie/list?" + apiKey + langDE;
-  private queryString: string = "";
+  private genreUrl: string = baseUrl + "genre/movie/list?" + apiKey + langDE;
+  private moviesByGenreUrl: string = baseUrl + "discover/movie?" + apiKey + langDE + "&with_genres=";
 
     constructor(private http: HttpClient) {
   }
@@ -34,6 +34,10 @@ export class MovieService {
   }
 
   getGenre(): Observable<GenreResponse> {
-    return this.http.get<GenreResponse>(this.GenreUrl);
+    return this.http.get<GenreResponse>(this.genreUrl);
+  }
+
+  getMoviesByGenre(genreID: string): Observable<MovieListResponse>{
+      return this.http.get<MovieListResponse>(this.moviesByGenreUrl + genreID)
   }
 }

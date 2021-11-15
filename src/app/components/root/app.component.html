@@ -14,7 +14,7 @@
           <a class="nav-link" href="/favorites">Favoriten</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/allMovies">Alle Filme</a>
+          <a class="nav-link" href="/popular">Beliebte</a>
         </li>
         <li class="nav-item dropdown" ngbDropdown>
           <a class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown"
@@ -22,7 +22,7 @@
             Genres
           </a>
           <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="navbarScrollingDropdown">
-            <a href="/genre"><li ngbDropdownItem class="dropdown-item" *ngFor="let genre of genres">{{genre.name}}</li></a>
+            <li ngbDropdownItem class="dropdown-item" name=genreId *ngFor="let genre of genres"><a [routerLink]="['/genre']" [queryParams]="{id: genre.id}">{{genre.name}}</a></li>
           </ul>
         </li>
       </ul>
@@ -36,4 +36,5 @@
   </div>
 </nav>
 <router-outlet></router-outlet>
+
 

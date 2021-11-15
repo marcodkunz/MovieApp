@@ -1,17 +1,17 @@
 import {Component, Input, Output} from '@angular/core';
 import {MovieService} from "../../services/movie/movie.service";
 import {MovieListResponse, MovieResponse} from "../../models/Movie";
-import {Router} from '@angular/router';
 import {Genre, GenreResponse} from "../../models/Genre";
+import {GenreComponent} from "../genre/genre.component";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
 
-  searchResult: Array<MovieResponse> = [];
+  public searchResult: Array<MovieResponse> = [];
   genres: Array<Genre> = [];
 
   title = 'MovieApp';
@@ -29,11 +29,11 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
+
     this.movieService.getGenre().subscribe((data: GenreResponse) => {
         this.genres = data.genres
       }
     )
   }
-
 }
 

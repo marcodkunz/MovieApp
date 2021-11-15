@@ -5,15 +5,24 @@
   border-color: white;
 }
 
+a {
+  color: #212529;
+}
+
 .card-title {
   min-height: 45px;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
 }
 
 .card-text {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 4; /* number of lines to show */
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   min-height: 110px;
 }
