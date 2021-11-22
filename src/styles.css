@@ -1,43 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
 
+a:hover {
+  color: #212529;
+  text-decoration: none;
+}
+
+.btn-secondary {
+  color: #fff;
+  background-color: transparent;
+  border-color: #6c757d;
+}
+
+.inline-right {
+  float: right;
+  text-align: right;
+  position:absolute;
+  top:0;
+  right:0;
+}
+
+
+button {
+  box-shadow: #212529;
+}
+
 .btn-outline-success {
   color: white;
   border-color: white;
 }
 
+.btn:hover {
+  background: white;
+  color: #212529;
+}
+.dropdown-toggle:active .nav-link:active{
+  background: white;
+  color: #212529;
+}
 .card-title {
-  min-height: 45px;
+  min-height: 15px;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
 }
 
 .card-text {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 4; /* number of lines to show */
   -webkit-box-orient: vertical;
-  min-height: 110px;
+  min-height: 90px;
+  -webkit-line-clamp: 3;
 }
 
 .movie-card {
   display: inline-block;
   margin-left: 24px;
   margin-top: 24px;
-}
-
-.card {
-  background-color: #212529;
-  color: white;
-}
-
-
-body {
-  margin-bottom: 30px;
-  background-color: #212529;
-}
-
-.btn:hover {
-  background: white;
-  color: #212529;
 }
 
 .container {
@@ -57,14 +78,26 @@ body {
   padding-left: 1.0rem;
 }
 
-.navbar-brand {
-  font-size: 1.8rem;
+.card {
+  background-color: #212529;
+  color: white;
+}
+
+a {
+  color: #212529;
 }
 
 
 body {
+  margin-bottom: 30px;
+  background-color: #212529;
   font-size: 1.2rem;
 }
+
+.navbar-brand {
+  font-size: 1.8rem;
+}
+
 
 
 

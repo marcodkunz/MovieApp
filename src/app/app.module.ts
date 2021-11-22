@@ -10,13 +10,15 @@ import { ImagePipe } from './pipes/image.pipe';
 import {CarouselModule} from "primeng/carousel";
 import { MoviesComponent } from './components/movies/movies.component';
 import {FormsModule} from "@angular/forms";
+import { GenreComponent } from './components/genre/genre.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ImagePipe,
-    MoviesComponent
+    MoviesComponent,
+    GenreComponent,
   ],
     imports: [
         BrowserModule,
