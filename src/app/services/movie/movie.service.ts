@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {MovieListResponse} from "../../models/Movie";
-import {query} from "@angular/animations";
 import {apiKey, baseUrl, langDE} from "../../../environments/environment";
 import {GenreResponse} from "../../models/Genre";
 
@@ -29,15 +28,19 @@ export class MovieService {
     return this.http.get<MovieListResponse>(this.popularMoviesUrl);
   }
 
-  getSearch(queryString: string): Observable<MovieListResponse> {
-    return this.http.get<MovieListResponse>(this.searchMovieBaseUrl+queryString);
-  }
-
   getGenre(): Observable<GenreResponse> {
     return this.http.get<GenreResponse>(this.genreUrl);
   }
 
   getMoviesByGenre(genreID: string): Observable<MovieListResponse>{
       return this.http.get<MovieListResponse>(this.moviesByGenreUrl + genreID)
+  }
+
+  search(queryString: string): Observable<MovieListResponse>{
+    return this.http.get<MovieListResponse>(this.searchMovieBaseUrl + queryString)
+  }
+
+  reloadSearch() {
+
   }
 }

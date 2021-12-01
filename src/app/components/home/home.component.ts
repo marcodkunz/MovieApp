@@ -1,18 +1,18 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, } from '@angular/core';
 import {MovieListResponse, MovieResponse} from "../../models/Movie";
 import {MovieService} from "../../services/movie/movie.service";
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+
 })
 export class HomeComponent implements OnInit {
-
-  nowPlaying: Array<MovieResponse> = [];
-
   constructor(private movieService: MovieService) {
   }
+
+  nowPlaying: Array<MovieResponse> = [];
+  query: string = '';
 
   ngOnInit(): void {
     this.movieService.getNowPlaying().subscribe((data: MovieListResponse) => {
@@ -20,5 +20,8 @@ export class HomeComponent implements OnInit {
       }
     )
   }
+
+
+
 
 }

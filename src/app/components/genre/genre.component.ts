@@ -1,9 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {MovieListResponse, MovieResponse} from "../../models/Movie";
 import {MovieService} from "../../services/movie/movie.service";
-import {AppComponent} from "../root/app.component";
 import {ActivatedRoute} from "@angular/router";
-import {GenreResponse} from "../../models/Genre";
 
 @Component({
   selector: 'app-genre',
@@ -19,6 +17,17 @@ export class GenreComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.activatedRoute.queryParams.subscribe(res => {
+        console.log(res);
+        this.movieService.getMoviesByGenre(res['id']).subscribe((data: MovieListResponse) => {
+            this.movieByGenreResponse = data.results
+          }
+        );
+      }
+    )
+  }
+
+  ngOnChanges(): void {
     this.activatedRoute.queryParams.subscribe(res => {
         console.log(res);
         this.movieService.getMoviesByGenre(res['id']).subscribe((data: MovieListResponse) => {
