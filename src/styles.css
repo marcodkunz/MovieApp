@@ -1,19 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+
+body {
+  margin-bottom: 20px;
+  background-color: #212529;
+  font-size: 1.2rem;
+}
+
+a {
+  color: #212529;
+}
 
 a:hover {
   color: #212529;
   text-decoration: none;
 }
-
-.ng-reflect-ng-class {
-
-}
-.inline-right {
-  float: right;
-  text-align: right;
-  position: absolute;
-  top: 0;
-  right: 0;
+.card-table {
+  overflow-x: auto;
+  white-space: nowrap;
+  color: white;
+  margin-left: 25px;
+  margin-right: 25px;
 }
 
 .form-control:focus {
@@ -25,37 +30,21 @@ a:hover {
 .dropdown-item:active,
 .dropdown-item:focus,
 .dropdown-item:active:focus {
-  background-color: lightgrey!important;
+  background-color: lightgrey !important;
 }
 
-.card-title {
-  min-height: 40px;
-  font-size: 18px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2; /* number of lines to show */
-  -webkit-box-orient: vertical;
-}
-
-.film-title {
-  display: none;
-}
-
-.card-title:hover,
-.movie-title {
-  display: block;
+h4 {
   color: white;
+  margin-left: 25px;
+  margin-top: 20px;
+  margin-bottom: 0;
 }
 
-.card-text {
-  font-size: 12px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 6; /* number of lines to show */
-  -webkit-box-orient: vertical;
-  min-height: 110px;
+.card {
+  background-color: #212529;
+  color: white;
+  margin-left: 20px;
+  margin-bottom:10px;
 }
 
 .image-size-card {
@@ -65,14 +54,20 @@ a:hover {
   max-height: 273px;
 }
 
-.movie-card {
-  display: inline-block;
-  margin-top: 40px;
-  margin-left: 20px;
+.image-size-card-home {
+  min-width: 222px;
+  min-height: 333px;
+  max-width: 222px;
+  max-height: 333px;
 }
 
-.container {
-  margin-top: 40px;
+.movie-card {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
 }
 
 .nav-tabs {
@@ -93,34 +88,65 @@ a:hover {
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 40; /* number of lines to show */
+  -webkit-line-clamp: 40;
   -webkit-box-orient: vertical;
 }
 
-
-.card {
-  background-color: #212529;
-  color: white;
-}
-
-
 .row {
-  margin-left: 20px;
+  margin: 20px 35px;
 }
 
-a {
-  color: #212529;
+.card-table::-webkit-scrollbar {
+  background-color: transparent;
+  overflow-y: scroll;
+  height: 10px;
+  width: max-content;
+}
+.card-title {
+  min-height: 40px;
+  font-size: 18px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  white-space: normal;
 }
 
-
-body {
-  margin-bottom: 30px;
-  background-color: #212529;
-  font-size: 1.2rem;
+.card-text {
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  min-height: 110px;
+  white-space: normal;
+  font-style: normal;
 }
 
-.navbar-brand {
-  font-size: 1.8rem;
+.card-title:hover,
+.movie-title {
+  display: block;
+  color: white;
+  white-space: normal;
+}
+
+.movie-title {
+  min-height: 50px;
+  max-height: 50px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+}
+
+.card-table::-webkit-scrollbar-track {
+  display: none;
+}
+
+.card-table::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px darkgrey;
 }
 
 

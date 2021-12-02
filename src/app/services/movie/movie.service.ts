@@ -10,10 +10,11 @@ import {GenreResponse} from "../../models/Genre";
 })
 export class MovieService {
 
-  // TODO: refactor
   private nowPlayingUrl: string = baseUrl + "movie/now_playing?" + apiKey;
   private searchMovieBaseUrl: string = baseUrl + "search/movie?" + apiKey + langDE + "&query=";
   private popularMoviesUrl: string = baseUrl + "movie/popular?" + apiKey + langDE;
+  private topRatedUrl: string = baseUrl + "movie/top_rated?" + apiKey + langDE;
+  private favouriteMoviesUrl: string = baseUrl + "account/1/favorite/movies?" + apiKey + langDE;
   private genreUrl: string = baseUrl + "genre/movie/list?" + apiKey + langDE;
   private moviesByGenreUrl: string = baseUrl + "discover/movie?" + apiKey + langDE + "&with_genres=";
 
@@ -24,10 +25,17 @@ export class MovieService {
     return this.http.get<MovieListResponse>(this.nowPlayingUrl);
   }
 
+  getFavouriteMovies(): Observable<MovieListResponse> {
+    return this.http.get<MovieListResponse>(this.favouriteMoviesUrl);
+  }
+
+  getTopRatedMovies(): Observable<MovieListResponse> {
+      return this.http.get<MovieListResponse>(this.topRatedUrl);
+  }
+
   getPopularMovies(): Observable<MovieListResponse> {
     return this.http.get<MovieListResponse>(this.popularMoviesUrl);
   }
-
   getGenre(): Observable<GenreResponse> {
     return this.http.get<GenreResponse>(this.genreUrl);
   }
@@ -38,9 +46,5 @@ export class MovieService {
 
   search(queryString: string): Observable<MovieListResponse>{
     return this.http.get<MovieListResponse>(this.searchMovieBaseUrl + queryString)
-  }
-
-  reloadSearch() {
-
   }
 }

@@ -16,7 +16,7 @@ export class GenreComponent implements OnInit {
   constructor(private movieService: MovieService, private activatedRoute: ActivatedRoute) {
   }
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
     this.activatedRoute.queryParams.subscribe(res => {
         console.log(res);
         this.movieService.getMoviesByGenre(res['id']).subscribe((data: MovieListResponse) => {
@@ -27,7 +27,7 @@ export class GenreComponent implements OnInit {
     )
   }
 
-  ngOnChanges(): void {
+  ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe(res => {
         console.log(res);
         this.movieService.getMoviesByGenre(res['id']).subscribe((data: MovieListResponse) => {
