@@ -12,7 +12,6 @@ import {Router} from "@angular/router";
 export class AppComponent implements OnInit {
 
   genres: Array<Genre> = [];
-  searchResult: Array<MovieResponse> = [];
   title = 'MovieApp';
   query: string = '';
 
