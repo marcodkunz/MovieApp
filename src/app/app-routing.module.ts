@@ -1,15 +1,16 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from "./components/home/home.component";
 import {MoviesComponent} from "./components/movies/movies.component";
 import {GenreComponent} from "./components/genre/genre.component";
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
-  {path: 'popular', component: MoviesComponent},
+  {path: 'popular', redirectTo: 'home', pathMatch: 'full'},
   {path: 'latestMovies', component: MoviesComponent},
   {path: 'genre', component: GenreComponent},
   {path: 'favorite', redirectTo: 'home', pathMatch: 'full'},
+  {path: 'search', component: MoviesComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: '**', component: HomeComponent},
 ];
@@ -18,4 +19,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

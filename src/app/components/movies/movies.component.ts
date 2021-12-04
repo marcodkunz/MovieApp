@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MovieListResponse, MovieResponse} from "../../models/Movie";
 import {MovieService} from "../../services/movie/movie.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-movies',
@@ -9,16 +10,30 @@ import {MovieService} from "../../services/movie/movie.service";
 })
 export class MoviesComponent implements OnInit {
 
-  latestMovies: Array<MovieResponse> = [];
+  movieList: Array<MovieResponse> = [];
 
-  constructor(private movieService: MovieService) {
+  constructor(private movieService: MovieService, private activatedRoute: ActivatedRoute) {
   }
 
-  ngOnInit(): void {
-    this.movieService.getPopularMovies().subscribe((data: MovieListResponse) => {
-        this.latestMovies = data.results
+  ngOnChanges(): void {
+    this.activatedRoute.queryParams.subscribe(res => {
+        console.log(res);
+        this.movieService.search(res['query']).subscribe((data: MovieListResponse) => {
+            this.movieList = data.results
+          }
+        );
       }
     )
   }
 
+  ngOnInit(): void {
+    this.activatedRoute.queryParams.subscribe(res => {
+        console.log(res);
+        this.movieService.search(res['query']).subscribe((data: MovieListResponse) => {
+            this.movieList = data.results
+          }
+        );
+      }
+    )
+  }
 }
