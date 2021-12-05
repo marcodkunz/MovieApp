@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MovieListResponse, MovieResponse} from "../../models/Movie";
 import {MovieService} from "../../services/movie/movie.service";
 import {ActivatedRoute} from "@angular/router";
@@ -10,7 +10,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class GenreComponent implements OnInit {
 
-  @Input() movieList: Array<MovieResponse> = [];
+  movieList: Array<MovieResponse> = [];
 
   constructor(private movieService: MovieService, private activatedRoute: ActivatedRoute) {
   }

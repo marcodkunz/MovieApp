@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MovieListResponse, MovieResponse} from "../../models/Movie";
 import {MovieService} from "../../services/movie/movie.service";
 import {ActivatedRoute} from "@angular/router";
@@ -17,7 +17,6 @@ export class SearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe(res => {
-        console.log(res);
         this.movieService.search(res['query']).subscribe((data: MovieListResponse) => {
             this.movieList = data.results
           }

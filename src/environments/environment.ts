@@ -4,11 +4,12 @@
 
 export const environment = {
   production: false,
-  baseImageUrl: "https://image.tmdb.org/t/p/w500/"
+  baseImageUrl: "https://image.tmdb.org/t/p/w500/",
+  baseUrl: "https://api.themoviedb.org/3/",
+  serverBaseUrl: "http://localhost:3000/"
 };
 
 export const baseImageUrl = "https://image.tmdb.org/t/p/w500/"
-export const baseUrl = "https://api.themoviedb.org/3/"
 export const apiKey = "api_key=7a31fe58dd891f6ad484f3ae8589aa71"
 export const langDE = "&language=de-DE"
 

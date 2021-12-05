@@ -12,6 +12,7 @@ import {MoviesComponent} from './components/movies/movies.component';
 import {FormsModule} from "@angular/forms";
 import {GenreComponent} from './components/genre/genre.component';
 import {SearchComponent} from './components/search/search.component';
+import {FavouriteComponent} from './components/favourite/favourite.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import {SearchComponent} from './components/search/search.component';
     MoviesComponent,
     GenreComponent,
     SearchComponent,
+    FavouriteComponent,
   ],
   imports: [
     BrowserModule,
