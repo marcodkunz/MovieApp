@@ -1,2 +1,2 @@
-<h2>Genre</h2><!-- TODO: show selected genre -->
+<h4 *ngFor="let genre of genreList">{{genre.name}}</h4>
 <app-movies [movieList]="movieList"></app-movies>

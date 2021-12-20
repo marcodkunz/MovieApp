@@ -10,5 +10,6 @@ export class ImagePipe implements PipeTransform {
     if (value === null) return "";
     return baseImageUrl + value;
   }
-
 }
+
+

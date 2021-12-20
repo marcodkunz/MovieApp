@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {MovieListResponse, MovieResponse} from "../../models/Movie";
+import {MovieResponse} from "../../models/Movie";
 import {MovieService} from "../../services/movie/movie.service";
 import {RemoveFavouriteResponse} from "../../models/RemoveFavouriteResponse";
 import {AddFavoriteResponse} from "../../models/AddFavoriteResponse";
@@ -12,7 +12,6 @@ import {AddFavoriteResponse} from "../../models/AddFavoriteResponse";
 export class MoviesComponent implements OnInit {
 
   @Input() movieList: Array<MovieResponse> = [];
-
   favorites: Array<MovieResponse> = [];
 
   constructor(private movieService: MovieService) {

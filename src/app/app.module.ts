@@ -22,7 +22,7 @@ import {FavouriteComponent} from './components/favourite/favourite.component';
     MoviesComponent,
     GenreComponent,
     SearchComponent,
-    FavouriteComponent,
+    FavouriteComponent
   ],
   imports: [
     BrowserModule,

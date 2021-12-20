@@ -8,6 +8,7 @@ export interface MovieListResponse {
 }
 
 export interface MovieResponse {
+  _id?: string;
   poster_path: string,
   adult: boolean,
   overview: string,
