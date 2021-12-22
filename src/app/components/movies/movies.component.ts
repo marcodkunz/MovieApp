@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {MovieResponse} from "../../models/Movie";
 import {MovieService} from "../../services/movie/movie.service";
 import {RemoveFavouriteResponse} from "../../models/RemoveFavouriteResponse";
@@ -13,6 +13,8 @@ export class MoviesComponent implements OnInit {
 
   @Input() movieList: Array<MovieResponse> = [];
   favorites: Array<MovieResponse> = [];
+
+  @Output() updateFavorites = new EventEmitter<Array<MovieResponse>>();
 
   constructor(private movieService: MovieService) {
   }
@@ -32,13 +34,18 @@ export class MoviesComponent implements OnInit {
     if (this.favorites.some(m => m.id === movie.id)) {
       this.movieService.removeFavourite(movie).subscribe((data: RemoveFavouriteResponse) => {
         if (data.result != null) {
-          this.favorites.splice(this.favorites.indexOf(movie), 1);
+          const index = this.favorites.indexOf(movie, 0);
+          if (index > -1) {
+            this.favorites.splice(index, 1);
+          }
+          this.updateFavorites.emit(this.favorites);
         }
       });
     } else {
       this.movieService.addFavourite(movie).subscribe((data: AddFavoriteResponse) => {
         if (data.result != null && data.favourite.id === movie.id) {
           this.favorites.push(movie);
+          this.updateFavorites.emit(this.favorites);
         }
       });
     }

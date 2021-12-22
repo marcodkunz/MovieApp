@@ -20,4 +20,8 @@ export class FavouriteComponent implements OnInit {
       }
     );
   }
+
+  updateMovies(movieList: Array<MovieResponse>) {
+    this.movieList = movieList;
+  }
 }
