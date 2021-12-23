@@ -1,6 +1,5 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './components/root/app.component';
 import {HomeComponent} from './components/home/home.component';
@@ -12,6 +11,8 @@ import {MoviesComponent} from './components/movies/movies.component';
 import {FormsModule} from "@angular/forms";
 import {GenreComponent} from './components/genre/genre.component';
 import {SearchComponent} from './components/search/search.component';
+import {FavouriteComponent} from './components/favourite/favourite.component';
+import { MovieCarouselComponent } from './components/movie-carousel/movie-carousel.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,8 @@ import {SearchComponent} from './components/search/search.component';
     MoviesComponent,
     GenreComponent,
     SearchComponent,
+    FavouriteComponent,
+    MovieCarouselComponent
   ],
   imports: [
     BrowserModule,

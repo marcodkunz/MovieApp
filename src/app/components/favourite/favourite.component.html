@@ -1,0 +1,12 @@
+<h4>Favoriten</h4>
+<div *ngIf="movieList.length > 0">
+  <app-movies [movieList]="movieList" [favorites]="favorites" (updateFavorites)="updateMovies($event)"></app-movies>
+</div>
+<div style="margin: 25px" *ngIf="movieList.length <= 0">
+    <p>
+      Du hast noch keine Filme als Favorit hinzugefügt.<br/>
+      Klicke dazu einfach auf den Button mit dem Herz bei einem Film den du magst.
+      Somit fällt es dir einfacher diesen wieder zu finden.
+    </p>
+</div>
+

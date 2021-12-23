@@ -1,65 +1,8 @@
-<div>
-  <div>
-    <h4>Kinofilme</h4>
-  </div>
-  <div class="card-table">
-    <table>
-      <tr>
-        <th>
-          <div class="movie-card card" style="width: 14rem" *ngFor="let movie of nowPlaying">
-            <img src="{{movie.poster_path | image}}" class="card-img-top image-size-card-home" alt="{{movie.title}}">
-            <div class="card-body">
-              <h5 class="movie-title" ngbTooltip="{{movie.title}}">{{movie.title}}</h5>
-              <div>
-              </div>
-            </div>
-          </div>
-        </th>
-      </tr>
-    </table>
-  </div>
-</div>
+<h4>Kinofilme</h4>
+<app-movie-carousel [movieList]="nowPlaying" [favorites]="favorites" (updateFavorites)="updateMovies($event)"></app-movie-carousel>
 
-<div>
-  <div>
-    <h4>Beliebte Filme</h4>
-  </div>
-  <div class="card-table">
-    <table>
-      <tr>
-        <th>
-          <div class="movie-card card" style="width: 14rem" *ngFor="let movie of popularMovies">
-            <img src="{{movie.poster_path | image}}" class="card-img-top image-size-card-home" alt="{{movie.title}}">
-            <div class="card-body">
-              <h5 class="movie-title" ngbTooltip="{{movie.title}}">{{movie.title}}</h5>
-              <div>
-              </div>
-            </div>
-          </div>
-        </th>
-      </tr>
-    </table>
-  </div>
-</div>
+<h4>Beliebte Filme</h4>
+<app-movie-carousel [movieList]="popularMovies" [favorites]="favorites" (updateFavorites)="updateMovies($event)"></app-movie-carousel>
 
-<div>
-  <div>
-    <h4>Top Bewertete Filme</h4>
-  </div>
-  <div class="card-table">
-    <table>
-      <tr>
-        <th>
-          <div class="movie-card card" style="width: 14rem" *ngFor="let movie of topRatedMovies">
-            <img src="{{movie.poster_path | image}}" class="card-img-top image-size-card-home" alt="{{movie.title}}">
-            <div class="card-body">
-              <h5 class="movie-title" ngbTooltip="{{movie.title}}">{{movie.title}}</h5>
-              <div>
-              </div>
-            </div>
-          </div>
-        </th>
-      </tr>
-    </table>
-  </div>
-</div>
+<h4>Top Bewertete Filme</h4>
+<app-movie-carousel [movieList]="topRatedMovies" [favorites]="favorites" (updateFavorites)="updateMovies($event)"></app-movie-carousel>

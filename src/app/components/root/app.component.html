@@ -18,9 +18,9 @@
              aria-expanded="false" ngbDropdownToggle>
             Genres
           </a>
-          <!-- TODO: add active class if genres are shown -->
           <ul class="dropdown-menu" routerLinkActive="active" ngbDropdownMenu aria-labelledby="navbarScrollingDropdown">
-            <li ngbDropdownItem class="dropdown-item" role="button" [routerLink]="['/genre']" [queryParams]="{id: genre.id}"
+            <li ngbDropdownItem class="dropdown-item" role="button" [routerLink]="['/genre']"
+                [queryParams]="{id: genre.id}"
                 *ngFor="let genre of genres">
               {{genre.name}}
             </li>
