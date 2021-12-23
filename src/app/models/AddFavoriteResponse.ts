@@ -1,6 +1,6 @@
 import {MovieResponse} from "./Movie";
 
 export interface AddFavoriteResponse {
-  result: string,
-  favourite: MovieResponse
+  result?: string,
+  favourite?: MovieResponse
 }
