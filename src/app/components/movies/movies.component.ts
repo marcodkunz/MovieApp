@@ -34,7 +34,7 @@ export class MoviesComponent implements OnInit {
     if (this.favorites.some(m => m.id === movie.id)) {
       this.movieService.removeFavourite(movie).subscribe((data: RemoveFavouriteResponse) => {
         if (data.result != null) {
-          const index = this.favorites.indexOf(movie, 0);
+          const index = this.favorites.findIndex((f) => f.id === movie.id);
           if (index > -1) {
             this.favorites.splice(index, 1);
           }
