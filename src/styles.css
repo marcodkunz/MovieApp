@@ -6,6 +6,10 @@ body {
   font-size: 1.2rem;
 }
 
+p {
+  color: white;
+}
+
 a {
   color: #212529;
 }
@@ -153,9 +157,7 @@ h4 {
   -webkit-box-shadow: inset 0 0 6px darkgrey;
 }
 
-p {
-  color: white;
-}
+
 
 
 

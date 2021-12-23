@@ -8,6 +8,7 @@ import {Router} from "@angular/router";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
+
 export class AppComponent implements OnInit {
 
   genres: Array<Genre> = [];
@@ -26,7 +27,6 @@ export class AppComponent implements OnInit {
     )
   }
 
-  // TODO: Wenn Suche glich 0 - Keine Funkiton auslösen
   search(newQuery: string): void {
     this.query = newQuery;
     if (this.query !== null) {

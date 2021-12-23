@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {MovieResponse} from "../../models/Movie";
 import {MovieService} from "../../services/movie/movie.service";
 import {RemoveFavouriteResponse} from "../../models/RemoveFavouriteResponse";
@@ -9,21 +9,13 @@ import {AddFavoriteResponse} from "../../models/AddFavoriteResponse";
   templateUrl: './movies.component.html',
   styleUrls: ['./movies.component.css']
 })
-export class MoviesComponent implements OnInit {
+export class MoviesComponent {
 
   @Input() movieList: Array<MovieResponse> = [];
-  favorites: Array<MovieResponse> = [];
-
+  @Input() favorites: Array<MovieResponse> = [];
   @Output() updateFavorites = new EventEmitter<Array<MovieResponse>>();
 
   constructor(private movieService: MovieService) {
-  }
-
-  ngOnInit(): void {
-    this.movieService.getFavouriteMovies().subscribe((data: Array<MovieResponse>) => {
-        this.favorites = data
-      }
-    );
   }
 
   isFavourite(movie: MovieResponse): boolean {
@@ -50,5 +42,4 @@ export class MoviesComponent implements OnInit {
       });
     }
   }
-
 }
