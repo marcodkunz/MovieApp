@@ -13,7 +13,7 @@ export class SearchComponent implements OnInit {
   movieList: Array<MovieResponse> = [];
 
   constructor(private movieService: MovieService, private activatedRoute: ActivatedRoute) {
-  }
+  };
 
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe(res => {

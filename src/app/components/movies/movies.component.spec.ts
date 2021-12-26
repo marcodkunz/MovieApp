@@ -24,7 +24,6 @@ describe('MoviesComponent', () => {
     video: false,
     vote_average: 5
   }
-
   const batman = {
     poster_path: "string",
     adult: false,
