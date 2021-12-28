@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {MoviesComponent} from "../movies/movies.component";
 
 @Component({
@@ -7,5 +7,4 @@ import {MoviesComponent} from "../movies/movies.component";
   styleUrls: ['./movie-carousel.component.css']
 })
 export class MovieCarouselComponent extends MoviesComponent {
-
 }

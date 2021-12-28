@@ -11,7 +11,7 @@ import {MovieResponse} from "../../models/Movie";
 export class FavouriteComponent implements OnInit {
 
   movieList: Array<MovieResponse> = [];
-  favorites: Array<MovieResponse> = [];
+
   @Output() updateFavorites = new EventEmitter<Array<MovieResponse>>();
 
   constructor(private movieService: MovieService) {
@@ -22,15 +22,9 @@ export class FavouriteComponent implements OnInit {
         this.movieList = data
       }
     );
-
-    this.movieService.getFavouriteMovies().subscribe((data: Array<MovieResponse>) => {
-        this.favorites = data
-      }
-    );
   }
 
   updateMovies(movieList: Array<MovieResponse>) {
     this.movieList = movieList;
   }
-
 }

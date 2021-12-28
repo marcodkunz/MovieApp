@@ -1,1 +1,1 @@
-<app-movies [movieList]="movieList"></app-movies>
+<app-movies (updateFavorites)="updateMovies($event)" [favorites]="favorites" [movieList]="movieList"></app-movies>

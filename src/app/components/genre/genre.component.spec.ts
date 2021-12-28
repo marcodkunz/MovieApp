@@ -1,5 +1,5 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { GenreComponent } from './genre.component';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
+import {GenreComponent} from './genre.component';
 import {HttpClientTestingModule} from "@angular/common/http/testing";
 import {RouterTestingModule} from "@angular/router/testing";
 import {MoviesComponent} from "../movies/movies.component";

@@ -1,3 +1,5 @@
+// noinspection JSUnusedGlobalSymbols,JSUnusedLocalSymbols
+
 import {MoviesComponent} from './movies.component';
 import {MovieService} from "../../services/movie/movie.service";
 import {MovieResponse} from "../../models/Movie";

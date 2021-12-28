@@ -30,12 +30,9 @@ export class AppComponent implements OnInit {
   search(newQuery: string): void {
     this.query = newQuery;
     if (this.query !== null) {
-      this.router.navigate(['/search'], {queryParams: {query: this.query}})
-        .then(nav => {
-          console.log(nav);
-        }, err => {
-          console.log(err)
-        });
+      this.router.navigate(['/search'], {queryParams: {query: this.query}}).then(() => {
+        // Ignoring unused promise
+      });
     }
   }
 }

@@ -1,35 +1,38 @@
+<!--suppress XmlHighlighting -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" [routerLink]="['/home']">MovieWorld</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <a [routerLink]="['/home']" class="navbar-brand">MovieWorld</a>
+    <button aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+            data-bs-target="#navbarText" data-bs-toggle="collapse" type="button">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse show navbar-responsive-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" [routerLink]="['/home']">Home</a>
+          <a [routerLink]="['/home']" class="nav-link" routerLinkActive="active">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLinkActive="active" [routerLink]="['/favorites']">Favoriten</a>
+          <a [routerLink]="['/favorites']" class="nav-link" routerLinkActive="active">Favoriten</a>
         </li>
         <li class="nav-item dropdown" ngbDropdown>
-          <a class="nav-link dropdown-toggle" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown"
-             aria-expanded="false" ngbDropdownToggle>
+          <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+             id="navbarScrollingDropdown"
+             ngbDropdownToggle role="button">
             Genres
           </a>
-          <ul class="dropdown-menu" routerLinkActive="active" ngbDropdownMenu aria-labelledby="navbarScrollingDropdown">
-            <li ngbDropdownItem class="dropdown-item" role="button" [routerLink]="['/genre']"
-                [queryParams]="{id: genre.id}"
-                *ngFor="let genre of genres">
+          <ul aria-labelledby="navbarScrollingDropdown" class="dropdown-menu" ngbDropdownMenu routerLinkActive="active">
+            <li *ngFor="let genre of genres" [queryParams]="{id: genre.id}" [routerLink]="['/genre']"
+                class="dropdown-item"
+                ngbDropdownItem
+                role="button">
               {{genre.name}}
             </li>
           </ul>
         </li>
       </ul>
       <form class=".ml-auto form-inline my-2 my-lg-0">
-        <input name="query" class=".ml-auto form-control mr-sm-2" type="search" placeholder="Suchen"
-               aria-label="Search" [(ngModel)]="query" (keyup)="search(query)">
+        <input (keyup)="search(query)" [(ngModel)]="query" aria-label="Search" class=".ml-auto form-control mr-sm-2"
+               name="query" placeholder="Suchen" type="search">
       </form>
     </div>
   </div>

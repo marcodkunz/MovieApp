@@ -1,5 +1,5 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { MovieCarouselComponent } from './movie-carousel.component';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
+import {MovieCarouselComponent} from './movie-carousel.component';
 import {HttpClientTestingModule} from "@angular/common/http/testing";
 import {RouterTestingModule} from "@angular/router/testing";
 
@@ -9,13 +9,13 @@ describe('MovieCarouselComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MovieCarouselComponent ],
+      declarations: [MovieCarouselComponent],
       imports: [
         HttpClientTestingModule,
         RouterTestingModule
       ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

@@ -9,10 +9,12 @@ import {MovieService} from "../../services/movie/movie.service";
 })
 
 export class HomeComponent implements OnInit {
+
   nowPlaying: Array<MovieResponse> = [];
   popularMovies: Array<MovieResponse> = [];
   topRatedMovies: Array<MovieResponse> = [];
   favorites: Array<MovieResponse> = [];
+
   @Output() updateFavorites = new EventEmitter<Array<MovieResponse>>();
 
   constructor(private movieService: MovieService) {

@@ -1,8 +1,11 @@
 <h4>Kinofilme</h4>
-<app-movie-carousel [movieList]="nowPlaying" [favorites]="favorites" (updateFavorites)="updateMovies($event)"></app-movie-carousel>
+<app-movie-carousel (updateFavorites)="updateMovies($event)" [favorites]="favorites"
+                    [movieList]="nowPlaying"></app-movie-carousel>
 
 <h4>Beliebte Filme</h4>
-<app-movie-carousel [movieList]="popularMovies" [favorites]="favorites" (updateFavorites)="updateMovies($event)"></app-movie-carousel>
+<app-movie-carousel (updateFavorites)="updateMovies($event)" [favorites]="favorites"
+                    [movieList]="popularMovies"></app-movie-carousel>
 
 <h4>Top Bewertete Filme</h4>
-<app-movie-carousel [movieList]="topRatedMovies" [favorites]="favorites" (updateFavorites)="updateMovies($event)"></app-movie-carousel>
+<app-movie-carousel (updateFavorites)="updateMovies($event)" [favorites]="favorites"
+                    [movieList]="topRatedMovies"></app-movie-carousel>

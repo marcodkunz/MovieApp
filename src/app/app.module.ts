@@ -12,7 +12,7 @@ import {FormsModule} from "@angular/forms";
 import {GenreComponent} from './components/genre/genre.component';
 import {SearchComponent} from './components/search/search.component';
 import {FavouriteComponent} from './components/favourite/favourite.component';
-import { MovieCarouselComponent } from './components/movie-carousel/movie-carousel.component';
+import {MovieCarouselComponent} from './components/movie-carousel/movie-carousel.component';
 
 @NgModule({
   declarations: [

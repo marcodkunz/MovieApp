@@ -2,12 +2,12 @@
   <table>
     <tr>
       <th>
-        <div class="movie-card card" style="width: 14rem" *ngFor="let movie of movieList">
-          <img src="{{movie.poster_path | image}}" class="card-img-top image-size-card-home" alt="{{movie.title}}">
+        <div *ngFor="let movie of movieList" class="movie-card card" style="width: 14rem">
+          <img alt="{{movie.title}}" class="card-img-top image-size-card-home" src="{{movie.poster_path | image}}">
           <div class="card-body">
             <h5 class="movie-title" ngbTooltip="{{movie.title}}">{{movie.title}}</h5>
             <div>
-              <button type="button" class="btn btn-secondary" (click)="toggleLike(movie)">
+              <button (click)="toggleLike(movie)" class="btn btn-secondary" type="button">
                 <i *ngIf="isFavourite(movie) == true" class="bi bi-heart-fill"></i>
                 <i *ngIf="isFavourite(movie) == false" class="bi bi-heart"></i>
               </button>

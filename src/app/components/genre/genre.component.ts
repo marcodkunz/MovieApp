@@ -15,6 +15,7 @@ export class GenreComponent implements OnInit {
   genreList: Array<Genre> = [];
   genre: Array<Genre> = [];
   favorites: Array<MovieResponse> = [];
+
   @Output() updateFavorites = new EventEmitter<Array<MovieResponse>>();
 
   constructor(private movieService: MovieService, private activatedRoute: ActivatedRoute) {
@@ -22,7 +23,6 @@ export class GenreComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe(res => {
-        console.log(res);
         this.movieService.getMoviesByGenre(res['id']).subscribe((data: MovieListResponse) => {
             this.movieList = data.results
           }
@@ -31,7 +31,6 @@ export class GenreComponent implements OnInit {
     )
 
     this.activatedRoute.queryParams.subscribe(res => {
-        console.log(res);
         this.movieService.getGenre().subscribe((data: GenreResponse) => {
             this.genreList = data.genres.filter((genre) => genre.id == res['id'])
           }
