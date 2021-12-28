@@ -1,4 +1,5 @@
 // TODO: replace urls with production
+// noinspection JSUnusedGlobalSymbols
 export const environment = {
   production: true,
   baseImageUrl: "https://image.tmdb.org/t/p/w500/",

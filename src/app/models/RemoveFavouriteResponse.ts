@@ -1,3 +1,3 @@
 export interface RemoveFavouriteResponse {
-  result: string
+  result?: string
 }

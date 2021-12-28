@@ -11,5 +11,3 @@ export class ImagePipe implements PipeTransform {
     return environment.baseImageUrl + value;
   }
 }
-
-

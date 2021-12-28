@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {MovieListResponse, MovieResponse} from "../../models/Movie";
 import {MovieService} from "../../services/movie/movie.service";
 import {ActivatedRoute} from "@angular/router";
@@ -11,9 +11,12 @@ import {ActivatedRoute} from "@angular/router";
 export class SearchComponent implements OnInit {
 
   movieList: Array<MovieResponse> = [];
+  favorites: Array<MovieResponse> = [];
+
+  @Output() updateFavorites = new EventEmitter<Array<MovieResponse>>();
 
   constructor(private movieService: MovieService, private activatedRoute: ActivatedRoute) {
-  }
+  };
 
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe(res => {
@@ -23,5 +26,14 @@ export class SearchComponent implements OnInit {
         );
       }
     )
+
+    this.movieService.getFavouriteMovies().subscribe((data: Array<MovieResponse>) => {
+        this.favorites = data
+      }
+    );
+  }
+
+  updateMovies(favorites: Array<MovieResponse>) {
+    this.favorites = favorites;
   }
 }

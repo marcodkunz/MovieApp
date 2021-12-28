@@ -1,6 +1,7 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { HomeComponent } from './home.component';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
+import {HomeComponent} from './home.component';
+import {HttpClientTestingModule} from "@angular/common/http/testing";
+import {MovieCarouselComponent} from "../movie-carousel/movie-carousel.component";
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -8,9 +9,13 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      declarations: [
+        HomeComponent,
+        MovieCarouselComponent
+      ],
+      imports: [HttpClientTestingModule]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

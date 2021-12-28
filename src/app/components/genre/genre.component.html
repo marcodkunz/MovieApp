@@ -1,2 +1,2 @@
 <h4 *ngFor="let genre of genreList">{{genre.name}}</h4>
-<app-movies [movieList]="movieList" [favorites]="favorites" (updateFavorites)="updateMovies($event)"></app-movies>
+<app-movies (updateFavorites)="updateMovies($event)" [favorites]="favorites" [movieList]="movieList"></app-movies>

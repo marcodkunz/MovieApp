@@ -1,12 +1,12 @@
 <div class="cardCluster row">
-  <div class="movie-card card" style="width: 11.5rem" *ngFor="let movie of movieList">
-    <img src="{{movie.poster_path | image}}" class="image-size-card card-img-top" alt="{{movie.title}}">
+  <div *ngFor="let movie of movieList" class="movie-card card" style="width: 11.5rem">
+    <img alt="{{movie.title}}" class="image-size-card card-img-top" src="{{movie.poster_path | image}}">
     <div class="card-body">
       <h5 class="card-title">{{movie.title}}</h5>
       <p class="card-text align-self-end" ngbTooltip="{{movie.overview}}"
-         tooltipClass="my-custom-class">{{movie.overview}}</p>
+         tooltipClass="tooltip">{{movie.overview}}</p>
       <a>
-        <button type="button" class="btn btn-secondary" (click)="toggleLike(movie)">
+        <button (click)="toggleLike(movie)" class="btn btn-secondary" type="button">
           <i *ngIf="isFavourite(movie) == true" class="bi bi-heart-fill"></i>
           <i *ngIf="isFavourite(movie) == false" class="bi bi-heart"></i>
         </button>

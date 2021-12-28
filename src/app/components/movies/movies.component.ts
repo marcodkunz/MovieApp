@@ -13,6 +13,7 @@ export class MoviesComponent {
 
   @Input() movieList: Array<MovieResponse> = [];
   @Input() favorites: Array<MovieResponse> = [];
+
   @Output() updateFavorites = new EventEmitter<Array<MovieResponse>>();
 
   constructor(private movieService: MovieService) {
@@ -35,7 +36,7 @@ export class MoviesComponent {
       });
     } else {
       this.movieService.addFavourite(movie).subscribe((data: AddFavoriteResponse) => {
-        if (data.result != null && data.favourite.id === movie.id) {
+        if (data.result != null && data.favourite?.id === movie.id) {
           this.favorites.push(movie);
           this.updateFavorites.emit(this.favorites);
         }
